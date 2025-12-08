@@ -6,12 +6,10 @@
     <meta name="description" content="Bali 2026 峇里島深度旅遊規劃 - 從叢林秘境到懸崖大海的極致體驗">
     <title>Bali 2026 | Deep Blue & Jungle Sanctuary</title>
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- html2canvas -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     
     <style>
@@ -52,6 +50,15 @@
             --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
 
+        /* SVG Icon Utility Class */
+        .icon-svg {
+            width: 1.2em;
+            height: 1.2em;
+            fill: currentColor;
+            vertical-align: middle;
+            display: inline-block;
+        }
+
         *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
@@ -89,102 +96,102 @@
         }
 
         /* OCEAN WAVES BACKGROUND */
-       
-.ocean-waves-bg {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    z-index: -1 !important;
-    overflow: hidden !important;
-    pointer-events: none !important;
-    background: 
-        radial-gradient(ellipse at 15% 70%, rgba(30, 129, 176, 0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 85% 30%, rgba(233, 196, 106, 0.12) 0%, transparent 45%),
-        radial-gradient(ellipse at 50% 100%, rgba(255, 255, 255, 0.08) 0%, transparent 60%) !important;
-}
+        .ocean-waves-bg {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            z-index: -1 !important;
+            overflow: hidden !important;
+            pointer-events: none !important;
+            background: 
+                radial-gradient(ellipse at 15% 70%, rgba(30, 129, 176, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 85% 30%, rgba(233, 196, 106, 0.12) 0%, transparent 45%),
+                radial-gradient(ellipse at 50% 100%, rgba(255, 255, 255, 0.08) 0%, transparent 60%) !important;
+        }
 
-.wave-layer {
-    position: absolute !important;
-    width: 200% !important;
-    height: 200% !important;
-    background-repeat: repeat-x !important;
-    background-size: 800px 80px !important;
-}
+        .wave-layer {
+            position: absolute !important;
+            width: 200% !important;
+            height: 200% !important;
+            background-repeat: repeat-x !important;
+            background-size: 800px 80px !important;
+        }
 
-.wave-1 {
-    bottom: -20% !important;
-    left: 0 !important;
-    background-image: repeating-linear-gradient(
-        90deg,
-        transparent 0px,
-        rgba(255, 255, 255, 0.08) 300px,
-        rgba(233, 196, 106, 0.05) 500px,
-        transparent 800px
-    ) !important;
-    animation: wave-flow-1 60s linear infinite !important;
-    opacity: 1 !important;
-}
+        .wave-1 {
+            bottom: -20% !important;
+            left: 0 !important;
+            background-image: repeating-linear-gradient(
+                90deg,
+                transparent 0px,
+                rgba(255, 255, 255, 0.08) 300px,
+                rgba(233, 196, 106, 0.05) 500px,
+                transparent 800px
+            ) !important;
+            animation: wave-flow-1 60s linear infinite !important;
+            opacity: 1 !important;
+        }
 
-.wave-2 {
-    bottom: -15% !important;
-    left: 0 !important;
-    background-image: repeating-linear-gradient(
-        90deg,
-        transparent 0px,
-        rgba(255, 255, 255, 0.1) 250px,
-        rgba(30, 129, 176, 0.06) 400px,
-        transparent 700px
-    ) !important;
-    animation: wave-flow-2 45s linear infinite !important;
-    opacity: 1 !important;
-    animation-delay: -15s !important;
-}
+        .wave-2 {
+            bottom: -15% !important;
+            left: 0 !important;
+            background-image: repeating-linear-gradient(
+                90deg,
+                transparent 0px,
+                rgba(255, 255, 255, 0.1) 250px,
+                rgba(30, 129, 176, 0.06) 400px,
+                transparent 700px
+            ) !important;
+            animation: wave-flow-2 45s linear infinite !important;
+            opacity: 1 !important;
+            animation-delay: -15s !important;
+        }
 
-.wave-3 {
-    bottom: -10% !important;
-    left: 0 !important;
-    background-image: repeating-linear-gradient(
-        90deg,
-        transparent 0px,
-        rgba(233, 196, 106, 0.08) 400px,
-        rgba(255, 255, 255, 0.06) 600px,
-        transparent 1000px
-    ) !important;
-    animation: wave-flow-3 70s linear infinite !important;
-    opacity: 1 !important;
-    animation-delay: -30s !important;
-}
+        .wave-3 {
+            bottom: -10% !important;
+            left: 0 !important;
+            background-image: repeating-linear-gradient(
+                90deg,
+                transparent 0px,
+                rgba(233, 196, 106, 0.08) 400px,
+                rgba(255, 255, 255, 0.06) 600px,
+                transparent 1000px
+            ) !important;
+            animation: wave-flow-3 70s linear infinite !important;
+            opacity: 1 !important;
+            animation-delay: -30s !important;
+        }
 
-.wave-4 {
-    bottom: -5% !important;
-    left: 0 !important;
-    background-image: repeating-linear-gradient(
-        90deg,
-        transparent 0px,
-        rgba(255, 255, 255, 0.05) 500px,
-        transparent 900px
-    ) !important;
-    animation: wave-flow-1 90s linear infinite reverse !important;
-    opacity: 1 !important;
-    animation-delay: -45s !important;
-}
+        .wave-4 {
+            bottom: -5% !important;
+            left: 0 !important;
+            background-image: repeating-linear-gradient(
+                90deg,
+                transparent 0px,
+                rgba(255, 255, 255, 0.05) 500px,
+                transparent 900px
+            ) !important;
+            animation: wave-flow-1 90s linear infinite reverse !important;
+            opacity: 1 !important;
+            animation-delay: -45s !important;
+        }
 
-@keyframes wave-flow-1 {
-    0% { transform: translateX(0) translateY(0); }
-    100% { transform: translateX(-800px) translateY(25px); }
-}
+        @keyframes wave-flow-1 {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(-800px) translateY(25px); }
+        }
 
-@keyframes wave-flow-2 {
-    0% { transform: translateX(0) translateY(0); }
-    100% { transform: translateX(-700px) translateY(-15px); }
-}
+        @keyframes wave-flow-2 {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(-700px) translateY(-15px); }
+        }
 
-@keyframes wave-flow-3 {
-    0% { transform: translateX(0) translateY(0); }
-    100% { transform: translateX(-1000px) translateY(35px); }
-}
+        @keyframes wave-flow-3 {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(-1000px) translateY(35px); }
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -459,6 +466,44 @@
             height: 1px;
             background: var(--gray-700);
             position: relative;
+            overflow: visible;
+        }
+
+        .flight-plane {
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            color: var(--gold-accent);
+            animation: flyAcross 6s ease-in-out infinite;
+            filter: drop-shadow(0 0 8px rgba(233, 196, 106, 0.4));
+        }
+
+        @keyframes flyAcross {
+            0% { 
+                left: -20px; 
+                opacity: 0;
+                transform: translateY(-50%) scale(0.8) rotate(90deg);
+            }
+            10% { 
+                opacity: 1;
+                transform: translateY(-50%) scale(1) rotate(90deg);
+            }
+            50% { 
+                left: 50%; 
+                transform: translateY(-50%) scale(1) rotate(90deg);
+            }
+            90% { 
+                opacity: 1;
+                transform: translateY(-50%) scale(1) rotate(90deg);
+            }
+            100% { 
+                left: calc(100% + 20px); 
+                opacity: 0;
+                transform: translateY(-50%) scale(0.8) rotate(90deg);
+            }
         }
 
         .flight-duration {
@@ -467,49 +512,6 @@
             letter-spacing: 1px;
         }
 
-.flight-line {
-    width: 100px;
-    height: 1px;
-    background: var(--gray-700);
-    position: relative;
-    overflow: visible;
-}
-
-.flight-plane {
-    position: absolute;
-    top: 50%;
-    left: -20px;
-    transform: translateY(-50%);
-    font-size: 1.2rem;
-    color: var(--gold-accent);
-    animation: flyAcross 6s ease-in-out infinite;
-    filter: drop-shadow(0 0 8px rgba(233, 196, 106, 0.4));
-}
-
-@keyframes flyAcross {
-    0% { 
-        left: -20px; 
-        opacity: 0;
-        transform: translateY(-50%) scale(0.8);
-    }
-    10% { 
-        opacity: 1;
-        transform: translateY(-50%) scale(1);
-    }
-    50% { 
-        left: 50%; 
-        transform: translateY(-50%) scale(1);
-    }
-    90% { 
-        opacity: 1;
-        transform: translateY(-50%) scale(1);
-    }
-    100% { 
-        left: calc(100% + 20px); 
-        opacity: 0;
-        transform: translateY(-50%) scale(0.8);
-    }
-}
         .flight-link {
             display: inline-block;
             margin-top: 40px;
@@ -554,6 +556,7 @@
             filter: grayscale(0%);
         }
 
+        /* 修正區域：增強遮罩以突顯文字 */
         .region-card-overlay {
             position: absolute;
             top: 0;
@@ -562,8 +565,9 @@
             height: 100%;
             background: linear-gradient(
                 180deg,
-                transparent 40%,
-                rgba(10,10,10,0.9) 100%
+                transparent 0%,
+                rgba(10,10,10,0.2) 40%,
+                rgba(10,10,10,0.95) 100%
             );
         }
 
@@ -573,12 +577,16 @@
             left: 0;
             right: 0;
             padding: 40px;
+            /* 額外的漸層確保文字可讀性 */
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .region-icon {
             font-size: 1.5rem;
             margin-bottom: 16px;
-            opacity: 0.8;
+            opacity: 0.9;
+            color: var(--gold-accent);
         }
 
         .region-name {
@@ -592,13 +600,14 @@
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
             font-size: 0.95rem;
-            color: var(--text-secondary);
+            color: var(--gray-200); /* 調整為更亮的灰色 */
             margin-bottom: 16px;
+            opacity: 0.9;
         }
 
         .region-desc {
             font-size: 0.85rem;
-            color: var(--text-muted);
+            color: var(--gray-300); /* 調整為更亮的灰色 */
             line-height: 1.7;
             max-height: 0;
             overflow: hidden;
@@ -626,9 +635,10 @@
 
         .region-highlight-tag {
             padding: 4px 12px;
-            border: 1px solid var(--glass-border);
+            border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(0,0,0,0.4);
             font-size: 0.7rem;
-            color: var(--text-secondary);
+            color: var(--gray-200);
             letter-spacing: 1px;
         }
 
@@ -846,26 +856,26 @@
             background: var(--glass-hover);
         }
 
-.experience-card.active:hover {
-    box-shadow: 
-        0 0 30px rgba(233, 196, 106, 0.3),
-        0 0 60px rgba(233, 196, 106, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
-    transform: translateY(-2px);
-}
+        .experience-card.active:hover {
+            box-shadow: 
+                0 0 30px rgba(233, 196, 106, 0.3),
+                0 0 60px rgba(233, 196, 106, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
 
-.experience-card.active {
-    border-color: var(--gold-accent);
-    background: linear-gradient(
-        135deg, 
-        rgba(233, 196, 106, 0.08) 0%, 
-        rgba(255, 107, 53, 0.05) 100%
-    );
-    box-shadow: 
-        0 0 20px rgba(233, 196, 106, 0.2),
-        0 0 40px rgba(233, 196, 106, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
+        .experience-card.active {
+            border-color: var(--gold-accent);
+            background: linear-gradient(
+                135deg, 
+                rgba(233, 196, 106, 0.08) 0%, 
+                rgba(255, 107, 53, 0.05) 100%
+            );
+            box-shadow: 
+                0 0 20px rgba(233, 196, 106, 0.2),
+                0 0 40px rgba(233, 196, 106, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
 
         .experience-badge {
             position: absolute;
@@ -888,6 +898,7 @@
         .experience-icon {
             font-size: 2rem;
             margin-bottom: 20px;
+            color: var(--gold-accent);
         }
 
         .experience-name {
@@ -966,6 +977,7 @@
 
         .region-header-icon {
             font-size: 1.5rem;
+            color: var(--gold-accent);
         }
 
         .region-header-text h4 {
@@ -998,8 +1010,12 @@
             border-color: var(--gray-700);
         }
 
+        /* 修正區域：統一住宿選擇邏輯與體驗風格一致 */
         .accommodation-card.active {
-            border-color: var(--text-primary);
+            border-color: var(--gold-accent);
+            box-shadow: 
+                0 0 20px rgba(233, 196, 106, 0.2),
+                inset 0 0 40px rgba(233, 196, 106, 0.1);
         }
 
         .accommodation-card-bg {
@@ -1022,6 +1038,12 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(180deg, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.85) 100%);
+            transition: background 0.3s ease;
+        }
+        
+        /* 增加選中時的背景光暈感 */
+        .accommodation-card.active .accommodation-card-overlay {
+            background: linear-gradient(180deg, rgba(233, 196, 106, 0.1) 0%, rgba(10,10,10,0.9) 100%);
         }
 
         .accommodation-card-content {
@@ -1052,47 +1074,40 @@
         .accommodation-hotels-list {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 6px;
             margin-bottom: 16px;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .accommodation-hotels-list {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    margin-bottom: 16px;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-}
+        .hotel-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: #ffffff;
+            transition: var(--transition-smooth);
+            padding: 8px 12px;
+            border-radius: 4px;
+            border-left: 2px solid transparent;
+        }
 
-.hotel-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.8rem;
-    color: #ffffff;
-    transition: var(--transition-smooth);
-    padding: 8px 12px;
-    border-radius: 4px;
-    border-left: 2px solid transparent;
-}
+        .hotel-link:hover {
+            color: var(--gold-accent);
+            opacity: 1;
+            background: rgba(233, 196, 106, 0.1);
+            border-left-color: var(--gold-accent);
+            padding-left: 16px;
+        }
 
-.hotel-link:hover {
-    color: var(--gold-accent);
-    opacity: 1;
-    background: rgba(233, 196, 106, 0.1);
-    border-left-color: var(--gold-accent);
-    padding-left: 16px;
-}
-
-.hotel-link::before {
-    content: '→';
-    font-size: 0.8rem;
-    color: var(--gold-accent);
-    opacity: 0.7;
-}
+        .hotel-link::before {
+            content: '→';
+            font-size: 0.8rem;
+            color: var(--gold-accent);
+            opacity: 0.7;
+        }
 
         .hotel-link-type {
             font-size: 0.6rem;
@@ -1118,15 +1133,17 @@
             right: 20px;
             width: 32px;
             height: 32px;
-            background: var(--text-primary);
+            background: var(--gold-accent); /* 調整為金色，更顯眼 */
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.8rem;
+            font-size: 1rem;
             color: var(--black-deep);
             opacity: 0;
             transform: scale(0);
             transition: var(--transition-bounce);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(233, 196, 106, 0.6);
         }
 
         .accommodation-card.active .accommodation-selected {
@@ -1155,6 +1172,7 @@
 
         .budget-icon {
             font-size: 1.2rem;
+            color: var(--gold-accent);
         }
 
         .budget-info {
@@ -1264,6 +1282,7 @@
             justify-content: center;
             font-size: 1.5rem;
             box-shadow: 0 4px 20px rgba(233, 196, 106, 0.3);
+            color: #000;
         }
 
         .airline-info {
@@ -1598,9 +1617,39 @@
                 justify-content: center;
             }
 
+            /* 修正區域：手機版機票跑版修復 */
+            .boarding-pass {
+                border-radius: 12px;
+            }
+
+            .pass-header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+                padding: 24px;
+            }
+
+            .pass-header-left {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .pass-body {
+                padding: 24px;
+            }
+
             .pass-row {
                 grid-template-columns: 1fr;
-                gap: 16px;
+                gap: 20px;
+            }
+            
+            .pass-budget {
+                font-size: 1.8rem !important;
+            }
+            
+            .ticket-corner {
+                width: 24px;
+                height: 24px;
             }
         }
     </style>
@@ -1669,11 +1718,11 @@
                 </div>
 
                 <div class="flight-path">
-    <div class="flight-line">
-        <div class="flight-plane">✈</div>
-    </div>
-    <div class="flight-duration">約 5h 30m</div>
-</div>
+                    <div class="flight-line">
+                        <svg class="flight-plane" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+                    </div>
+                    <div class="flight-duration">約 5h 30m</div>
+                </div>
 
                 <div class="flight-point">
                     <div class="flight-code">DPS</div>
@@ -1705,6 +1754,9 @@
                     >
                     <div class="region-card-overlay"></div>
                     <div class="region-card-content">
+                        <div class="region-icon">
+                            <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zM5 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
+                        </div>
                         <h3 class="region-name">烏布 Ubud</h3>
                         <p class="region-tagline">「在稻浪與焚香中，找回內心的平靜」</p>
                         <p class="region-desc">
@@ -1726,6 +1778,9 @@
                     >
                     <div class="region-card-overlay"></div>
                     <div class="region-card-content">
+                        <div class="region-icon">
+                            <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-1.07 3.97-2.1 5.39z"/></svg>
+                        </div>
                         <h3 class="region-name">帕尼達島 Nusa Penida</h3>
                         <p class="region-tagline">「上帝遺落的藍色寶石」</p>
                         <p class="region-desc">
@@ -1747,6 +1802,9 @@
                     >
                     <div class="region-card-overlay"></div>
                     <div class="region-card-content">
+                        <div class="region-icon">
+                            <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg>
+                        </div>
                         <h3 class="region-name">努沙杜瓦 Nusa Dua</h3>
                         <p class="region-tagline">「極致奢華的代名詞」</p>
                         <p class="region-desc">
@@ -1934,12 +1992,13 @@
             <div class="experience-grid">
                 <div class="experience-card" id="card-ocean">
                     <span class="experience-badge">已升級</span>
-                    <div class="experience-icon">🌊</div>
+                    <div class="experience-icon"><svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.22-3.22-7.51-7.51 3.22 3.22 7.51zm6.55-5.05c-.72.72-1.88.72-2.6 0-.72-.72-.72-1.88 0-2.6.72-.72 1.88-.72 2.6 0 .72.72.72 1.88 0 2.6z"/></svg></div>
                     <h4 class="experience-name">海洋探索</h4>
                     <p class="experience-current" id="status-ocean">目前：精緻奢華</p>
                     <p class="experience-desc" id="desc-ocean">
                         參加精緻小團 Klook 套票，與其他旅客一同出海，熱鬧且高 CP 值。專業導遊帶領，裝備完整。
                     </p>
+                    
                     <div class="experience-toggle">
                         <button class="toggle-btn active" onclick="setExperience('ocean', 'value')">精緻奢華</button>
                         <button class="toggle-btn" onclick="setExperience('ocean', 'luxury')">頂級私人</button>
@@ -1949,12 +2008,13 @@
 
                 <div class="experience-card" id="card-food">
                     <span class="experience-badge">已升級</span>
-                    <div class="experience-icon">🍽️</div>
+                    <div class="experience-icon"><svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg></div>
                     <h4 class="experience-name">美食饗宴</h4>
                     <p class="experience-current" id="status-food">目前：精緻奢華</p>
                     <p class="experience-desc" id="desc-food">
                         海鮮燒烤吃到飽、在地高評價餐廳隨意點餐不看價格。從街頭美食到 Fine Dining 都能盡情享受。
                     </p>
+                    
                     <div class="experience-toggle">
                         <button class="toggle-btn active" onclick="setExperience('food', 'value')">精緻奢華</button>
                         <button class="toggle-btn" onclick="setExperience('food', 'luxury')">頂級私廚</button>
@@ -1964,12 +2024,13 @@
 
                 <div class="experience-card" id="card-spa">
                     <span class="experience-badge">已升級</span>
-                    <div class="experience-icon">💆</div>
+                    <div class="experience-icon"><svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></div>
                     <h4 class="experience-name">身心療癒</h4>
                     <p class="experience-current" id="status-spa">目前：精緻奢華</p>
                     <p class="experience-desc" id="desc-spa">
                         稻田景觀名店，如 Karsa Spa、Cretya Ubud 等，環境優美價格合理，每天按也不心疼。
                     </p>
+                    
                     <div class="experience-toggle">
                         <button class="toggle-btn active" onclick="setExperience('spa', 'value')">精緻奢華</button>
                         <button class="toggle-btn" onclick="setExperience('spa', 'luxury')">頂級飯店</button>
@@ -1988,7 +2049,7 @@
 
             <div class="accommodation-region">
                 <div class="region-header">
-                    <span class="region-header-icon">🌿</span>
+                    <span class="region-header-icon"><svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zM5 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></span>
                     <div class="region-header-text">
                         <h4>烏布 Ubud</h4>
                         <span>Day 1-2 · 2 晚</span>
@@ -2052,7 +2113,7 @@
 
             <div class="accommodation-region">
                 <div class="region-header">
-                    <span class="region-header-icon">🌊</span>
+                    <span class="region-header-icon"><svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-1.07 3.97-2.1 5.39z"/></svg></span>
                     <div class="region-header-text">
                         <h4>帕尼達島 Nusa Penida</h4>
                         <span>Day 3-4 · 2 晚</span>
@@ -2107,7 +2168,7 @@
 
             <div class="accommodation-region">
                 <div class="region-header">
-                    <span class="region-header-icon">🥂</span>
+                    <span class="region-header-icon"><svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg></span>
                     <div class="region-header-text">
                         <h4>努沙杜瓦 Nusa Dua</h4>
                         <span>Day 5-6 · 2 晚</span>
@@ -2181,7 +2242,9 @@
                     
                     <div class="pass-header">
                         <div class="pass-header-left">
-                            <div class="airline-icon">✈</div>
+                            <div class="airline-icon">
+                                <svg class="icon-svg" style="width:24px; height:24px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+                            </div>
                             <div class="airline-info">
                                 <span class="pass-logo">BALI 2026</span>
                                 <span class="pass-tagline">Luxury Escape</span>
@@ -2446,15 +2509,22 @@
         function downloadTicket() {
             const element = document.getElementById('ticket');
             
+            // 修正：調整下載參數以提升質感
             html2canvas(element, {
-                scale: 2,
-                backgroundColor: '#f5f5f5',
+                scale: 3, // 提高解析度到 3 倍
+                backgroundColor: '#0a0a0a', // 使用深黑色背景，而非預設白/灰
                 useCORS: true,
-                allowTaint: true
+                allowTaint: true,
+                logging: false,
+                onclone: (clonedDoc) => {
+                    // 可在此處對下載前的元素做額外樣式調整（例如增加邊距）
+                    const clonedElement = clonedDoc.getElementById('ticket');
+                    clonedElement.style.margin = '20px'; 
+                }
             }).then(canvas => {
                 const link = document.createElement('a');
                 link.download = `Bali_2026_${userName}.png`;
-                link.href = canvas.toDataURL('image/png');
+                link.href = canvas.toDataURL('image/png', 1.0); // 最高品質
                 link.click();
             }).catch(err => {
                 console.error('Download failed:', err);
