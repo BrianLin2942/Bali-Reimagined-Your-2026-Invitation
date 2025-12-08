@@ -1,0 +1,2471 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bali 2026 峇里島深度旅遊規劃 - 從叢林秘境到懸崖大海的極致體驗">
+    <title>Bali 2026 | Deep Blue & Jungle Sanctuary</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <style>
+        :root {
+            --coral-accent: #ff6b35;
+            --gold-accent: #e9c46a;
+            --sunset-accent: #f4a261;
+            --gradient-luxury: linear-gradient(135deg, #e9c46a 0%, #ff6b35 100%);
+            
+            --black-deep: #0a0a0a;
+            --black-mid: #141414;
+            --black-light: #1a1a1a;
+            --black-surface: #222222;
+            
+            --gray-900: #171717;
+            --gray-800: #262626;
+            --gray-700: #404040;
+            --gray-600: #525252;
+            --gray-500: #737373;
+            --gray-400: #a3a3a3;
+            --gray-300: #d4d4d4;
+            --gray-200: #e5e5e5;
+            --gray-100: #f5f5f5;
+            
+            --accent: #ffffff;
+            --accent-muted: rgba(255, 255, 255, 0.7);
+            --accent-subtle: rgba(255, 255, 255, 0.1);
+            
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-hover: rgba(255, 255, 255, 0.06);
+            
+            --text-primary: #ffffff;
+            --text-secondary: #a3a3a3;
+            --text-muted: #737373;
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: var(--black-deep);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
+
+        /* OCEAN WAVES BACKGROUND */
+       
+.ocean-waves-bg {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: -1 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    background: 
+        radial-gradient(ellipse at 15% 70%, rgba(30, 129, 176, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 85% 30%, rgba(233, 196, 106, 0.12) 0%, transparent 45%),
+        radial-gradient(ellipse at 50% 100%, rgba(255, 255, 255, 0.08) 0%, transparent 60%) !important;
+}
+
+.wave-layer {
+    position: absolute !important;
+    width: 200% !important;
+    height: 200% !important;
+    background-repeat: repeat-x !important;
+    background-size: 800px 80px !important;
+}
+
+.wave-1 {
+    bottom: -20% !important;
+    left: 0 !important;
+    background-image: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        rgba(255, 255, 255, 0.08) 300px,
+        rgba(233, 196, 106, 0.05) 500px,
+        transparent 800px
+    ) !important;
+    animation: wave-flow-1 60s linear infinite !important;
+    opacity: 1 !important;
+}
+
+.wave-2 {
+    bottom: -15% !important;
+    left: 0 !important;
+    background-image: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        rgba(255, 255, 255, 0.1) 250px,
+        rgba(30, 129, 176, 0.06) 400px,
+        transparent 700px
+    ) !important;
+    animation: wave-flow-2 45s linear infinite !important;
+    opacity: 1 !important;
+    animation-delay: -15s !important;
+}
+
+.wave-3 {
+    bottom: -10% !important;
+    left: 0 !important;
+    background-image: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        rgba(233, 196, 106, 0.08) 400px,
+        rgba(255, 255, 255, 0.06) 600px,
+        transparent 1000px
+    ) !important;
+    animation: wave-flow-3 70s linear infinite !important;
+    opacity: 1 !important;
+    animation-delay: -30s !important;
+}
+
+.wave-4 {
+    bottom: -5% !important;
+    left: 0 !important;
+    background-image: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        rgba(255, 255, 255, 0.05) 500px,
+        transparent 900px
+    ) !important;
+    animation: wave-flow-1 90s linear infinite reverse !important;
+    opacity: 1 !important;
+    animation-delay: -45s !important;
+}
+
+@keyframes wave-flow-1 {
+    0% { transform: translateX(0) translateY(0); }
+    100% { transform: translateX(-800px) translateY(25px); }
+}
+
+@keyframes wave-flow-2 {
+    0% { transform: translateX(0) translateY(0); }
+    100% { transform: translateX(-700px) translateY(-15px); }
+}
+
+@keyframes wave-flow-3 {
+    0% { transform: translateX(0) translateY(0); }
+    100% { transform: translateX(-1000px) translateY(35px); }
+}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 120px 0;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            opacity: 1;
+            transform: none;
+            padding: 0;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-bg-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                180deg,
+                rgba(10, 10, 10, 0.5) 0%,
+                rgba(10, 10, 10, 0.7) 50%,
+                rgba(10, 10, 10, 0.9) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            padding: 8px 24px;
+            border: 1px solid var(--glass-border);
+            border-radius: 0;
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-title {
+            font-size: clamp(4rem, 12vw, 8rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            font-weight: 400;
+            font-style: italic;
+            color: var(--text-secondary);
+            letter-spacing: 3px;
+            margin-bottom: 48px;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .hero-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            margin-bottom: 48px;
+            animation: fadeInUp 0.8s ease 0.8s both;
+        }
+
+        .hero-input-group {
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease 1s both;
+        }
+
+        .hero-input {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--gray-700);
+            color: var(--text-primary);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            text-align: center;
+            padding: 12px 20px;
+            width: 300px;
+            max-width: 90%;
+            transition: var(--transition-smooth);
+        }
+
+        .hero-input:focus {
+            outline: none;
+            border-color: var(--text-primary);
+        }
+
+        .hero-input::placeholder {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 16px 48px;
+            background: var(--text-primary);
+            color: var(--black-deep);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            animation: fadeInUp 0.8s ease 1.2s both;
+        }
+
+        .btn-primary:hover {
+            background: var(--gray-300);
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 48px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-muted);
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .scroll-indicator span {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(180deg, var(--gray-600), transparent);
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 6px 16px;
+            border: 1px solid var(--glass-border);
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+
+        .section-desc {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .flight-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 48px;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 48px;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .flight-point {
+            text-align: center;
+        }
+
+        .flight-code {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            letter-spacing: 4px;
+        }
+
+        .flight-city {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .flight-time {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .flight-path {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .flight-line {
+            width: 100px;
+            height: 1px;
+            background: var(--gray-700);
+            position: relative;
+        }
+
+        .flight-duration {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+.flight-line {
+    width: 100px;
+    height: 1px;
+    background: var(--gray-700);
+    position: relative;
+    overflow: visible;
+}
+
+.flight-plane {
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: var(--gold-accent);
+    animation: flyAcross 6s ease-in-out infinite;
+    filter: drop-shadow(0 0 8px rgba(233, 196, 106, 0.4));
+}
+
+@keyframes flyAcross {
+    0% { 
+        left: -20px; 
+        opacity: 0;
+        transform: translateY(-50%) scale(0.8);
+    }
+    10% { 
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+    }
+    50% { 
+        left: 50%; 
+        transform: translateY(-50%) scale(1);
+    }
+    90% { 
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+    }
+    100% { 
+        left: calc(100% + 20px); 
+        opacity: 0;
+        transform: translateY(-50%) scale(0.8);
+    }
+}
+        .flight-link {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 32px;
+            border: 1px solid var(--gray-700);
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: var(--transition-smooth);
+        }
+
+        .flight-link:hover {
+            border-color: var(--text-primary);
+            color: var(--text-primary);
+            opacity: 1;
+        }
+
+        .regions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+        }
+
+        .region-card {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .region-card-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+            filter: grayscale(30%);
+        }
+
+        .region-card:hover .region-card-bg {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+        }
+
+        .region-card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                180deg,
+                transparent 40%,
+                rgba(10,10,10,0.9) 100%
+            );
+        }
+
+        .region-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 40px;
+        }
+
+        .region-icon {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            opacity: 0.8;
+        }
+
+        .region-name {
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+
+        .region-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .region-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .region-card:hover .region-desc {
+            max-height: 200px;
+            opacity: 1;
+        }
+
+        .region-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .region-card:hover .region-highlights {
+            opacity: 1;
+        }
+
+        .region-highlight-tag {
+            padding: 4px 12px;
+            border: 1px solid var(--glass-border);
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            letter-spacing: 1px;
+        }
+
+        .itinerary-timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: var(--gray-800);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 60px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            align-items: flex-end;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 48px;
+            height: 48px;
+            background: var(--black-deep);
+            border: 1px solid var(--gray-700);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            z-index: 2;
+        }
+
+        .timeline-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            max-width: 360px;
+        }
+
+        .timeline-day {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .timeline-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .timeline-highlight {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 6px 16px;
+            border: 1px solid var(--glass-border);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        .highlights-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+        }
+
+        .highlight-card-large {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .highlight-card-large:hover {
+            transform: translateY(-4px);
+        }
+
+        .highlight-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+            filter: grayscale(20%);
+        }
+
+        .highlight-card-large:hover .highlight-bg {
+            transform: scale(1.08);
+            filter: grayscale(0%);
+        }
+
+        .highlight-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                180deg,
+                rgba(10, 10, 10, 0.3) 0%,
+                rgba(10, 10, 10, 0.85) 100%
+            );
+            transition: var(--transition-smooth);
+        }
+
+        .highlight-card-large:hover .highlight-overlay {
+            background: linear-gradient(
+                180deg,
+                rgba(10, 10, 10, 0.2) 0%,
+                rgba(10, 10, 10, 0.9) 100%
+            );
+        }
+
+        .highlight-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 40px;
+        }
+
+        .highlight-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 300;
+            color: rgba(233, 196, 106, 0.3);
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .highlight-title {
+            font-size: 1.6rem;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+
+        .highlight-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .highlight-card-large:hover .highlight-desc {
+            max-height: 200px;
+            opacity: 1;
+        }
+
+        .experience-intro {
+            border: 1px solid var(--glass-border);
+            padding: 32px;
+            margin-bottom: 48px;
+            text-align: center;
+        }
+
+        .experience-intro h4 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .experience-intro p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .experience-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 32px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .experience-card:hover {
+            background: var(--glass-hover);
+        }
+
+.experience-card.active:hover {
+    box-shadow: 
+        0 0 30px rgba(233, 196, 106, 0.3),
+        0 0 60px rgba(233, 196, 106, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.experience-card.active {
+    border-color: var(--gold-accent);
+    background: linear-gradient(
+        135deg, 
+        rgba(233, 196, 106, 0.08) 0%, 
+        rgba(255, 107, 53, 0.05) 100%
+    );
+    box-shadow: 
+        0 0 20px rgba(233, 196, 106, 0.2),
+        0 0 40px rgba(233, 196, 106, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+        .experience-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            padding: 4px 12px;
+            background: var(--text-primary);
+            color: var(--black-deep);
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .experience-card.active .experience-badge {
+            opacity: 1;
+        }
+
+        .experience-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .experience-name {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .experience-current {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .experience-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            line-height: 1.7;
+            min-height: 80px;
+        }
+
+        .experience-toggle {
+            display: flex;
+            gap: 8px;
+        }
+
+        .toggle-btn {
+            flex: 1;
+            padding: 10px 16px;
+            background: transparent;
+            border: 1px solid var(--gray-700);
+            color: var(--text-muted);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            letter-spacing: 1px;
+        }
+
+        .toggle-btn:hover {
+            border-color: var(--text-secondary);
+            color: var(--text-secondary);
+        }
+
+        .toggle-btn.active {
+            background: var(--text-primary);
+            border-color: var(--text-primary);
+            color: var(--black-deep);
+        }
+
+        .experience-price {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--glass-border);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .experience-price strong {
+            color: var(--text-primary);
+        }
+
+        .accommodation-region {
+            margin-bottom: 80px;
+        }
+
+        .region-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .region-header-icon {
+            font-size: 1.5rem;
+        }
+
+        .region-header-text h4 {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .region-header-text span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .accommodation-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .accommodation-card {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: var(--transition-smooth);
+        }
+
+        .accommodation-card:hover {
+            border-color: var(--gray-700);
+        }
+
+        .accommodation-card.active {
+            border-color: var(--text-primary);
+        }
+
+        .accommodation-card-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            filter: grayscale(20%);
+        }
+
+        .accommodation-card:hover .accommodation-card-bg {
+            transform: scale(1.03);
+            filter: grayscale(0%);
+        }
+
+        .accommodation-card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.85) 100%);
+        }
+
+        .accommodation-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 32px;
+        }
+
+        .accommodation-tier {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--text-primary);
+            color: var(--black-deep);
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .accommodation-title {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .accommodation-hotels-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .accommodation-hotels-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hotel-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: #ffffff;
+    transition: var(--transition-smooth);
+    padding: 8px 12px;
+    border-radius: 4px;
+    border-left: 2px solid transparent;
+}
+
+.hotel-link:hover {
+    color: var(--gold-accent);
+    opacity: 1;
+    background: rgba(233, 196, 106, 0.1);
+    border-left-color: var(--gold-accent);
+    padding-left: 16px;
+}
+
+.hotel-link::before {
+    content: '→';
+    font-size: 0.8rem;
+    color: var(--gold-accent);
+    opacity: 0.7;
+}
+
+        .hotel-link-type {
+            font-size: 0.6rem;
+            padding: 2px 6px;
+            border: 1px solid var(--gray-700);
+            color: var(--text-muted);
+            margin-left: 8px;
+        }
+
+        .accommodation-price {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .accommodation-price strong {
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .accommodation-selected {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 32px;
+            height: 32px;
+            background: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: var(--black-deep);
+            opacity: 0;
+            transform: scale(0);
+            transition: var(--transition-bounce);
+        }
+
+        .accommodation-card.active .accommodation-selected {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        #budget-bar {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            background: var(--black-mid);
+            border: 1px solid var(--gray-700);
+            padding: 20px 32px;
+            z-index: 1000;
+            transform: translateY(150%);
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        #budget-bar.show {
+            transform: translateY(0);
+        }
+
+        .budget-icon {
+            font-size: 1.2rem;
+        }
+
+        .budget-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .budget-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+        }
+
+        .budget-amount {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        #result-section {
+            padding-bottom: 180px;
+        }
+
+        .ticket-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .boarding-pass {
+            width: 100%;
+            max-width: 700px;
+            background: linear-gradient(
+                135deg,
+                rgba(20, 20, 20, 0.98) 0%,
+                rgba(26, 26, 26, 0.98) 100%
+            );
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(233, 196, 106, 0.2);
+            border-radius: 20px;
+            color: var(--text-primary);
+            overflow: hidden;
+            box-shadow: 
+                0 40px 80px rgba(0, 0, 0, 0.8),
+                0 0 60px rgba(233, 196, 106, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        .boarding-pass:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                0 50px 100px rgba(0, 0, 0, 0.9),
+                0 0 80px rgba(233, 196, 106, 0.25);
+        }
+
+        .ticket-corner {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(233, 196, 106, 0.3);
+            z-index: 1;
+        }
+
+        .ticket-corner-tl {
+            top: 16px;
+            left: 16px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .ticket-corner-tr {
+            top: 16px;
+            right: 16px;
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .pass-header {
+            background: linear-gradient(
+                135deg,
+                rgba(233, 196, 106, 0.12) 0%,
+                rgba(255, 107, 53, 0.08) 100%
+            );
+            border-bottom: 1px solid rgba(233, 196, 106, 0.2);
+            padding: 28px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .pass-header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .airline-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--gold-accent), var(--coral-accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 20px rgba(233, 196, 106, 0.3);
+        }
+
+        .airline-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pass-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--gold-accent);
+            letter-spacing: 4px;
+            text-shadow: 0 2px 15px rgba(233, 196, 106, 0.4);
+        }
+
+        .pass-tagline {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .pass-route {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .route-code {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: 3px;
+        }
+
+        .route-arrow {
+            font-size: 1.2rem;
+            color: var(--gold-accent);
+        }
+
+        .pass-body {
+            padding: 36px 40px;
+        }
+
+        .pass-section {
+            margin-bottom: 24px;
+        }
+
+        .pass-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .pass-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 24px;
+        }
+
+        .pass-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .pass-field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pass-field.full {
+            grid-column: 1 / -1;
+        }
+
+        .pass-field label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(233, 196, 106, 0.6);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .pass-field p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .style-tags,
+        .accommodation-tags {
+            font-family: 'Outfit', sans-serif !important;
+            font-size: 0.95rem !important;
+            color: var(--text-secondary) !important;
+            font-weight: 400 !important;
+            line-height: 1.6;
+        }
+
+        .pass-budget {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            font-size: 2.2rem !important;
+            background: linear-gradient(135deg, var(--gold-accent), var(--coral-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .currency {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .per-person {
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+
+        .pass-perforation {
+            position: relative;
+            height: 24px;
+            margin: 32px -40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .perf-line {
+            flex: 1;
+            height: 1px;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 8px,
+                rgba(233, 196, 106, 0.3) 8px,
+                rgba(233, 196, 106, 0.3) 16px
+            );
+        }
+
+        .perf-circle {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: var(--black-deep);
+            border: 1px solid rgba(233, 196, 106, 0.3);
+            border-radius: 50%;
+        }
+
+        .perf-left {
+            left: -12px;
+        }
+
+        .perf-right {
+            right: -12px;
+        }
+
+        .pass-divider {
+            height: 1px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(233, 196, 106, 0.2) 20%,
+                rgba(233, 196, 106, 0.2) 80%,
+                transparent
+            );
+            margin: 28px 0;
+        }
+
+        .pass-footer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px 40px;
+            text-align: center;
+            border-top: 1px solid rgba(233, 196, 106, 0.1);
+        }
+
+        .barcode-placeholder {
+            width: 200px;
+            height: 40px;
+            margin: 0 auto 12px;
+            background: repeating-linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0.1) 0px,
+                rgba(255, 255, 255, 0.1) 2px,
+                transparent 2px,
+                transparent 6px
+            );
+            border-radius: 4px;
+        }
+
+        .footer-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 0.85rem;
+            color: rgba(233, 196, 106, 0.5);
+        }
+
+        .download-section {
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 48px;
+            background: var(--text-primary);
+            color: var(--black-deep);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-download:hover {
+            background: var(--gray-300);
+            transform: translateY(-2px);
+        }
+
+        .btn-download svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 48px 24px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        footer p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 1024px) {
+            .regions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .region-card {
+                height: 400px;
+            }
+
+            .region-desc {
+                opacity: 1;
+                max-height: none;
+            }
+
+            .region-highlights {
+                opacity: 1;
+            }
+
+            .highlights-gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .highlight-card-large {
+                height: 400px;
+            }
+
+            .highlight-desc {
+                opacity: 1;
+                max-height: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 80px 0;
+            }
+
+            .flight-card {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                text-align: center;
+            }
+
+            .flight-path {
+                order: -1;
+            }
+
+            .flight-line {
+                width: 60px;
+            }
+
+            .experience-grid,
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .accommodation-options {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-line {
+                left: 24px;
+            }
+
+            .timeline-marker {
+                left: 24px;
+                width: 40px;
+                height: 40px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(odd) {
+                flex-direction: column;
+                padding-left: 70px;
+                text-align: left;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content {
+                align-items: flex-start;
+            }
+
+            .timeline-content {
+                max-width: none;
+            }
+
+            #budget-bar {
+                left: 16px;
+                right: 16px;
+                bottom: 16px;
+                justify-content: center;
+            }
+
+            .pass-row {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+<div class="ocean-waves-bg">
+    <div class="wave-layer wave-1"></div>
+    <div class="wave-layer wave-2"></div>
+    <div class="wave-layer wave-3"></div>
+    <div class="wave-layer wave-4"></div>
+</div>
+
+    <section id="hero">
+        <div class="hero-bg">
+            <img 
+                class="hero-bg-image"
+                src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1920&q=80"
+                alt="Bali landscape"
+            >
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+            <span class="hero-tag">2026 Travel Plan</span>
+            <h1 class="hero-title">BALI</h1>
+            <p class="hero-subtitle">The Deep Blue & Jungle Sanctuary</p>
+            <p class="hero-date">June 5 — 11, 2026 · 7 Days</p>
+            
+            <div class="hero-input-group">
+                <input 
+                    type="text" 
+                    id="username" 
+                    class="hero-input"
+                    placeholder="Enter Your Name..."
+                    autocomplete="off"
+                >
+            </div>
+            
+            <button class="btn-primary" onclick="startJourney()">
+                Start Planning
+            </button>
+        </div>
+
+        <div class="scroll-indicator">
+            <span></span>
+            SCROLL
+        </div>
+    </section>
+
+    <div class="container">
+
+        <section id="flight-section">
+            <div class="section-header">
+                <span class="section-tag">Flight Details</span>
+                <h2 class="section-title">航班資訊</h2>
+                <p class="section-desc">台北直飛峇里島，約 5.5 小時抵達熱帶天堂</p>
+            </div>
+
+            <div class="flight-card">
+                <div class="flight-point">
+                    <div class="flight-code">TPE</div>
+                    <div class="flight-city">台北桃園</div>
+                    <div class="flight-time">09:10 出發</div>
+                </div>
+
+                <div class="flight-path">
+    <div class="flight-line">
+        <div class="flight-plane">✈</div>
+    </div>
+    <div class="flight-duration">約 5h 30m</div>
+</div>
+
+                <div class="flight-point">
+                    <div class="flight-code">DPS</div>
+                    <div class="flight-city">峇里島登巴薩</div>
+                    <div class="flight-time">14:40 抵達</div>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="https://www.skyscanner.com.tw/" target="_blank" class="flight-link">
+                    查看 Skyscanner 即時票價
+                </a>
+            </div>
+        </section>
+
+        <section id="regions-section">
+            <div class="section-header">
+                <span class="section-tag">Destinations</span>
+                <h2 class="section-title">三大風格區域</h2>
+                <p class="section-desc">從叢林秘境到懸崖大海，最後回歸極致奢華</p>
+            </div>
+
+            <div class="regions-grid">
+                <div class="region-card">
+                    <img 
+                        class="region-card-bg"
+                        src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=800&q=80"
+                        alt="Ubud rice terraces"
+                    >
+                    <div class="region-card-overlay"></div>
+                    <div class="region-card-content">
+                        <h3 class="region-name">烏布 Ubud</h3>
+                        <p class="region-tagline">「在稻浪與焚香中，找回內心的平靜」</p>
+                        <p class="region-desc">
+                            峇里島的文化與藝術心臟，遠離海洋的翠綠山城。無盡的稻田、深邃的河谷與瀰漫在大氣中的神聖氛圍。電影《乘願天飛》的取景地，全球數位遊牧民族的聖地。
+                        </p>
+                        <div class="region-highlights">
+                            <span class="region-highlight-tag">懸空叢林建築</span>
+                            <span class="region-highlight-tag">Fine Dining</span>
+                            <span class="region-highlight-tag">瑜珈冥想</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="region-card">
+                    <img 
+                        class="region-card-bg"
+                        src="https://images.unsplash.com/photo-1573790387438-4da905039392?w=800&q=80"
+                        alt="Nusa Penida Kelingking Beach"
+                    >
+                    <div class="region-card-overlay"></div>
+                    <div class="region-card-content">
+                        <h3 class="region-name">帕尼達島 Nusa Penida</h3>
+                        <p class="region-tagline">「上帝遺落的藍色寶石」</p>
+                        <p class="region-desc">
+                            位於峇里島東南方的離島，保留了 20 年前峇里島的原始風貌。地形險峻，道路崎嶇，卻擁有令人屏息的垂直懸崖海景與全印尼最純淨的海洋生態。
+                        </p>
+                        <div class="region-highlights">
+                            <span class="region-highlight-tag">恐龍灣絕景</span>
+                            <span class="region-highlight-tag">Manta Ray</span>
+                            <span class="region-highlight-tag">果凍海</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="region-card">
+                    <img 
+                        class="region-card-bg"
+                        src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80"
+                        alt="Nusa Dua resort"
+                    >
+                    <div class="region-card-overlay"></div>
+                    <div class="region-card-content">
+                        <h3 class="region-name">努沙杜瓦 Nusa Dua</h3>
+                        <p class="region-tagline">「極致奢華的代名詞」</p>
+                        <p class="region-desc">
+                            位於峇里島南端的富人區,專為頂級旅遊打造的「特區」。街道整潔寬敞、治安極佳，聚集了全球最頂尖的五星級飯店品牌。
+                        </p>
+                        <div class="region-highlights">
+                            <span class="region-highlight-tag">頂級飯店群</span>
+                            <span class="region-highlight-tag">私人沙灘</span>
+                            <span class="region-highlight-tag">無敵日出</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="itinerary-section">
+            <div class="section-header">
+                <span class="section-tag">7 Days Journey</span>
+                <h2 class="section-title">每日行程概覽</h2>
+                <p class="section-desc">從叢林歸隱到海上冒險，再到奢華躺平的完美節奏</p>
+            </div>
+
+            <div class="itinerary-timeline">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">01</div>
+                    <div class="timeline-content">
+                        <span class="timeline-day">Day 1 · 06/05</span>
+                        <h4 class="timeline-title">抵達與叢林歸隱</h4>
+                        <p class="timeline-desc">
+                            14:40 抵達峇里島機場，專車直奔烏布。入住獨棟泳池 Villa，享受稻田景觀。晚餐推薦 Hujan Locale 或 Locavore NXT。
+                        </p>
+                        <span class="timeline-highlight">烏布 · Ubud</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">02</div>
+                    <div class="timeline-content">
+                        <span class="timeline-day">Day 2 · 06/06</span>
+                        <h4 class="timeline-title">烏布新派美學</h4>
+                        <p class="timeline-desc">
+                            上午享受 Villa 私人空間。下午前往 Cretya Ubud 梯田俱樂部或 Karsa Spa 稻田景觀按摩。晚餐前往 Copper Kitchen 頂樓微風晚餐。
+                        </p>
+                        <span class="timeline-highlight">SPA & Fine Dining</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">03</div>
+                    <div class="timeline-content">
+                        <span class="timeline-day">Day 3 · 06/07</span>
+                        <h4 class="timeline-title">航向藍色秘境</h4>
+                        <p class="timeline-desc">
+                            09:00 前往 Sanur 碼頭，搭乘快艇至帕尼達島。入住島嶼飯店，下午探索 Angel's Billabong 與 Broken Beach。
+                        </p>
+                        <span class="timeline-highlight">帕尼達島 · Nusa Penida</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">04</div>
+                    <div class="timeline-content">
+                        <span class="timeline-day">Day 4 · 06/08</span>
+                        <h4 class="timeline-title">追逐 Manta Ray</h4>
+                        <p class="timeline-desc">
+                            上午出海前往 Manta Point & Crystal Bay。下午前往 Kelingking Beach（恐龍灣）懸崖絕景。晚餐推薦 Amok Sunset 樹屋酒吧。
+                        </p>
+                        <span class="timeline-highlight">浮潛/潛水體驗</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">05</div>
+                    <div class="timeline-content">
+                        <span class="timeline-day">Day 5 · 06/09</span>
+                        <h4 class="timeline-title">回歸南方盛世</h4>
+                        <p class="timeline-desc">
+                            上午快閃 Diamond Beach 鑽石沙灘。13:00 搭船返回本島，入住南方度假村。晚餐可選飯店 Fine Dining 或 Jimbaran 海鮮燒烤。
+                        </p>
+                        <span class="timeline-highlight">努沙杜瓦 · Nusa Dua</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">06</div>
+                    <div class="timeline-content">
+                        <span class="timeline-day">Day 6 · 06/10</span>
+                        <h4 class="timeline-title">極致慵懶日</h4>
+                        <p class="timeline-desc">
+                            全日 Staycation！享受大型度假村設施：私人沙灘、多層次泳池、Beach Club。晚餐安排飯店招牌餐廳。
+                        </p>
+                        <span class="timeline-highlight">Resort Day</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">07</div>
+                    <div class="timeline-content">
+                        <span class="timeline-day">Day 7 · 06/11</span>
+                        <h4 class="timeline-title">完美的句點</h4>
+                        <p class="timeline-desc">
+                            睡到自然醒，12:00 退房。前往機場附近 Sukun Restaurant 午餐。15:40 班機返台。
+                        </p>
+                        <span class="timeline-highlight">返回台北</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="highlights-section">
+            <div class="section-header">
+                <span class="section-tag">Why This Trip</span>
+                <h2 class="section-title">行程亮點</h2>
+                <p class="section-desc">精心設計的三大難忘體驗</p>
+            </div>
+
+            <div class="highlights-gallery">
+                <div class="highlight-card-large">
+                    <img 
+                        class="highlight-bg"
+                        src="https://i.pinimg.com/1200x/75/ed/fa/75edfacb8af0376c84861b146d4fce45.jpg"
+                        alt="Swimming with Manta Rays"
+                    >
+                    <div class="highlight-overlay"></div>
+                    <div class="highlight-content">
+                        <div class="highlight-number">01</div>
+                        <h4 class="highlight-title">出海追 Manta</h4>
+                        <p class="highlight-desc">
+                            在 Manta Point 與海中巨人共舞，全球少數能全年近距離觀賞鬼蝠魟的潛點。可選擇私人包船享受專屬海洋時光，或參加精緻小團。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="highlight-card-large">
+                    <img 
+                        class="highlight-bg"
+                        src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODMzNjY2MTgyNTM5MjkzMzkw/original/775d50ac-df05-428a-b2eb-2800ff5c9923.jpeg?im_w=1440"
+                        alt="Luxury Villa with Glass Pool"
+                    >
+                    <div class="highlight-overlay"></div>
+                    <div class="highlight-content">
+                        <div class="highlight-number">02</div>
+                        <h4 class="highlight-title">野奢 Villa 體驗</h4>
+                        <p class="highlight-desc">
+                            不住制式飯店，而是住進像雜誌封面一樣的設計 Villa。全玻璃透視泳池或懸空於叢林之上的 Loft，這是只有內行玩家才知道的隱密享受。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="highlight-card-large">
+                    <img 
+                        class="highlight-bg"
+                        src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=1200&q=80"
+                        alt="Luxury Resort Pool"
+                    >
+                    <div class="highlight-overlay"></div>
+                    <div class="highlight-content">
+                        <div class="highlight-number">03</div>
+                        <h4 class="highlight-title">俱樂部式度假</h4>
+                        <p class="highlight-desc">
+                            選擇擁有強大 Beach Club 氛圍的飯店，從香檳早午餐到海灘派對，體驗南方的熱情與奢華，真正實現「茶來伸手、飯來張口」的貴族式假期。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience-section">
+            <div class="section-header">
+                <span class="section-tag">Customize</span>
+                <h2 class="section-title">體驗風格選擇</h2>
+                <p class="section-desc">調整您的旅行風格，所有費用即時更新</p>
+            </div>
+
+            <div class="experience-intro">
+                <h4>基礎費用說明</h4>
+                <p>
+                    以下費用包含：接機交通、景點門票、浮潛/潛水裝備、SPA 按摩、全程餐飲等。<br>
+                    差異主要在於「出海方式」、「餐飲等級」與「SPA 場地」三大項目。
+                </p>
+            </div>
+
+            <div class="experience-grid">
+                <div class="experience-card" id="card-ocean">
+                    <span class="experience-badge">已升級</span>
+                    <div class="experience-icon">🌊</div>
+                    <h4 class="experience-name">海洋探索</h4>
+                    <p class="experience-current" id="status-ocean">目前：精緻奢華</p>
+                    <p class="experience-desc" id="desc-ocean">
+                        參加精緻小團 Klook 套票，與其他旅客一同出海，熱鬧且高 CP 值。專業導遊帶領，裝備完整。
+                    </p>
+                    <div class="experience-toggle">
+                        <button class="toggle-btn active" onclick="setExperience('ocean', 'value')">精緻奢華</button>
+                        <button class="toggle-btn" onclick="setExperience('ocean', 'luxury')">頂級私人</button>
+                    </div>
+                    <div class="experience-price">升級差額：<strong>+$3,500</strong> /人</div>
+                </div>
+
+                <div class="experience-card" id="card-food">
+                    <span class="experience-badge">已升級</span>
+                    <div class="experience-icon">🍽️</div>
+                    <h4 class="experience-name">美食饗宴</h4>
+                    <p class="experience-current" id="status-food">目前：精緻奢華</p>
+                    <p class="experience-desc" id="desc-food">
+                        海鮮燒烤吃到飽、在地高評價餐廳隨意點餐不看價格。從街頭美食到 Fine Dining 都能盡情享受。
+                    </p>
+                    <div class="experience-toggle">
+                        <button class="toggle-btn active" onclick="setExperience('food', 'value')">精緻奢華</button>
+                        <button class="toggle-btn" onclick="setExperience('food', 'luxury')">頂級私廚</button>
+                    </div>
+                    <div class="experience-price">升級差額：<strong>+$2,000</strong> /人</div>
+                </div>
+
+                <div class="experience-card" id="card-spa">
+                    <span class="experience-badge">已升級</span>
+                    <div class="experience-icon">💆</div>
+                    <h4 class="experience-name">身心療癒</h4>
+                    <p class="experience-current" id="status-spa">目前：精緻奢華</p>
+                    <p class="experience-desc" id="desc-spa">
+                        稻田景觀名店，如 Karsa Spa、Cretya Ubud 等，環境優美價格合理，每天按也不心疼。
+                    </p>
+                    <div class="experience-toggle">
+                        <button class="toggle-btn active" onclick="setExperience('spa', 'value')">精緻奢華</button>
+                        <button class="toggle-btn" onclick="setExperience('spa', 'luxury')">頂級飯店</button>
+                    </div>
+                    <div class="experience-price">升級差額：<strong>+$1,500</strong> /人</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="accommodation-section">
+            <div class="section-header">
+                <span class="section-tag">Where to Stay</span>
+                <h2 class="section-title">住宿選擇</h2>
+                <p class="section-desc">挑選這幾晚想住進什麼樣的風景裡</p>
+            </div>
+
+            <div class="accommodation-region">
+                <div class="region-header">
+                    <span class="region-header-icon">🌿</span>
+                    <div class="region-header-text">
+                        <h4>烏布 Ubud</h4>
+                        <span>Day 1-2 · 2 晚</span>
+                    </div>
+                </div>
+
+                <div class="accommodation-options">
+                    <div class="accommodation-card" onclick="selectAccommodation(event, 'ubud', 'luxury', 6000, 7000)">
+                        <img 
+                            class="accommodation-card-bg"
+                            src="https://pix8.agoda.net/hotelImages/7534/-1/b93845289e8ce8ea73e8748eac9688c5.jpg?ca=16&ce=1&s=1024x"
+                            alt="Luxury Ubud Villa"
+                        >
+                        <div class="accommodation-card-overlay"></div>
+                        <div class="accommodation-selected">✓</div>
+                        <div class="accommodation-card-content">
+                            <span class="accommodation-tier">頂級奢華 $$$</span>
+                            <h4 class="accommodation-title">Jungle Pool Villa</h4>
+                            <div class="accommodation-hotels-list">
+                                <a href="https://www.airbnb.com.tw/rooms/833666182539293390" target="_blank" class="hotel-link" onclick="event.stopPropagation()">
+                                    Modern LOFT• Glass Pool <span class="hotel-link-type">Airbnb</span>
+                                </a>
+                                <a href="https://www.agoda.com/zh-tw/maya-ubud-resort-and-spa/hotel/bali-id.html" target="_blank" class="hotel-link" onclick="event.stopPropagation()">
+                                    Maya Ubud Resort <span class="hotel-link-type">飯店</span>
+                                </a>
+                                <a href="https://www.agoda.com/bisma-eight-ubud/hotel/bali-id.html" target="_blank" class="hotel-link" onclick="event.stopPropagation()">
+                                    Bisma Eight <span class="hotel-link-type">飯店</span>
+                                </a>
+                            </div>
+                            <p class="accommodation-price"><strong>$6,000 ~ $7,000</strong> /人 (2晚)</p>
+                        </div>
+                    </div>
+
+                    <div class="accommodation-card" onclick="selectAccommodation(event, 'ubud', 'value', 3000, 3500)">
+                        <img 
+                            class="accommodation-card-bg"
+                            src="https://a0.muscache.com/im/pictures/prohost-api/Hosting-1178608892782976586/original/b6175ef3-99ab-484b-a2f8-0035cff1a7fc.jpeg?im_w=1440"
+                            alt="Value Ubud Villa"
+                        >
+                        <div class="accommodation-card-overlay"></div>
+                        <div class="accommodation-selected">✓</div>
+                        <div class="accommodation-card-content">
+                            <span class="accommodation-tier">精緻奢華 $$</span>
+                            <h4 class="accommodation-title">Rice Field Retreat</h4>
+                            <div class="accommodation-hotels-list">
+                                <a href="https://www.airbnb.com.tw/rooms/1178608892782976586" target="_blank" class="hotel-link" onclick="event.stopPropagation()">
+                                    Villa Moana <span class="hotel-link-type">Airbnb</span>
+                                </a>
+                                <a href="https://www.airbnb.com/rooms/1348337512768331045" target="_blank" class="hotel-link" onclick="event.stopPropagation()">
+                                    Villa Crescence Paradise <span class="hotel-link-type">Airbnb</span>
+                                </a>
+                                <a href="https://www.airbnb.com/rooms/1420641888292402607" target="_blank" class="hotel-link" onclick="event.stopPropagation()">
+                                    Villa Lembah Giri Forest <span class="hotel-link-type">Airbnb</span>
+                                </a>
+                            </div>
+                            <p class="accommodation-price"><strong>$3,000 ~ $3,500</strong> /人 (2晚)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accommodation-region">
+                <div class="region-header">
+                    <span class="region-header-icon">🌊</span>
+                    <div class="region-header-text">
+                        <h4>帕尼達島 Nusa Penida</h4>
+                        <span>Day 3-4 · 2 晚</span>
+                    </div>
+                </div>
+
+                <div class="accommodation-options">
+                    <div class="accommodation-card" onclick="selectAccommodation(event, 'penida', 'luxury', 6000, 7000)">
+                        <img 
+                            class="accommodation-card-bg"
+                            src="https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/573801661.jpg?k=e1958b37514987a08e917d796caa9e615398fef33c92b0cc8f48e655c8e2129f&o=&s=1024x"
+                            alt="Luxury Nusa Penida"
+                        >
+                        <div class="accommodation-card-overlay"></div>
+                        <div class="accommodation-selected">✓</div>
+                        <div class="accommodation-card-content">
+                            <span class="accommodation-tier">頂級奢華 $$$</span>
+                            <h4 class="accommodation-title">Beachfront Resort</h4>
+                            <div class="accommodation-hotels-list">
+                                <a href="https://www.agoda.com/zh-tw/nusa-penida-beach-resort/hotel/bali-id.html" target="_blank" class="hotel-link" onclick="event.stopPropagation()">
+                                    Semaya Beach Resort <span class="hotel-link-type">飯店</span>
+                                </a>
+                            </div>
+                            <p class="accommodation-price"><strong>$6,000 ~ $7,000</strong> /人 (2晚)</p>
+                        </div>
+                    </div>
+
+                    <div class="accommodation-card" onclick="selectAccommodation(event, 'penida', 'value', 3500, 4500)">
+                        <img 
+                            class="accommodation-card-bg"
+                            src="https://pix8.agoda.net/hotelImages/12145599/-1/e446c8516aa41d8656b9daaaef54466e.jpg?ca=13&ce=1&s=1024x"
+                            alt="Value Nusa Penida"
+                        >
+                        <div class="accommodation-card-overlay"></div>
+                        <div class="accommodation-selected">✓</div>
+                        <div class="accommodation-card-content">
+                            <span class="accommodation-tier">精緻奢華 $$</span>
+                            <h4 class="accommodation-title">Ocean Dive Stay</h4>
+                            <div class="accommodation-hotels-list">
+                                <a href="https://www.agoda.com/zh-tw/adiwana-warnakali-resort-nusa-penida/hotel/bali-id.html" target="_blank" class="hotel-link" onclick="event.stopPropagation()">
+                                    Adiwana Warnakali <span class="hotel-link-type">飯店</span>
+                                </a>
+                                <a href="https://www.agoda.com/zh-tw/maua-nusa-penida-bali/hotel/bali-id.html" target="_blank" class="hotel-link" onclick="event.stopPropagation()">
+                                    Maua Nusa Penida <span class="hotel-link-type">飯店</span>
+                                </a>
+                            </div>
+                            <p class="accommodation-price"><strong>$3,500 ~ $4,500</strong> /人 (2晚)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accommodation-region">
+                <div class="region-header">
+                    <span class="region-header-icon">🥂</span>
+                    <div class="region-header-text">
+                        <h4>努沙杜瓦 Nusa Dua</h4>
+                        <span>Day 5-6 · 2 晚</span>
+                    </div>
+                </div>
+
+                <div class="accommodation-options">
+                    <div class="accommodation-card" onclick="selectAccommodation(event, 'nusadua', 'luxury', 7500, 14000)">
+                        <img 
+                            class="accommodation-card-bg"
+                            src="https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/174010773.jpg?k=7959fc9a513ac00be1b5b387c52a28a7351effe33ba49915f4843bcc738fec75&o=&s=1024x"
+                            alt="Luxury Nusa Dua"
+                        >
+                        <div class="accommodation-card-overlay"></div>
+                        <div class="accommodation-selected">✓</div>
+                        <div class="accommodation-card-content">
+                            <span class="accommodation-tier">頂級奢華 $$$</span>
+                            <h4 class="accommodation-title">The Royal Palace</h4>
+                            <div class="accommodation-hotels-list">
+                                <a href="https://www.agoda.com/en-au/the-mulia_6/hotel/bali-id.html" target="_blank" class="hotel-link" onclick="event.stopPropagation()">
+                                    Mulia Resort <span class="hotel-link-type">飯店</span>
+                                </a>
+                                <a href="https://www.agoda.com/sofitel-bali-nusa-dua-beach-resort/hotel/bali-id.html" target="_blank" class="hotel-link" onclick="event.stopPropagation()">
+                                    Sofitel Bali Nusa Dua <span class="hotel-link-type">飯店</span>
+                                </a>
+                            </div>
+                            <p class="accommodation-price"><strong>$7,500 ~ $14,000</strong> /人 (2晚)</p>
+                        </div>
+                    </div>
+
+                    <div class="accommodation-card" onclick="selectAccommodation(event, 'nusadua', 'value', 5000, 7400)">
+                        <img 
+                            class="accommodation-card-bg"
+                            src="https://pix8.agoda.net/hotelImages/2288296/0/e97e234b53b6d0063805cd541ff76a9e.jpeg?ce=2&s=1024x"
+                            alt="Value Nusa Dua"
+                        >
+                        <div class="accommodation-card-overlay"></div>
+                        <div class="accommodation-selected">✓</div>
+                        <div class="accommodation-card-content">
+                            <span class="accommodation-tier">精緻奢華 $$</span>
+                            <h4 class="accommodation-title">Beach Club Relax</h4>
+                            <div class="accommodation-hotels-list">
+                                <a href="https://www.agoda.com/zh-tw/conrad-bali/hotel/bali-id.html" target="_blank" class="hotel-link" onclick="event.stopPropagation()">
+                                    Conrad Bali <span class="hotel-link-type">飯店</span>
+                                </a>
+                                <a href="https://www.agoda.com/zh-tw/holiday-inn-resort-bali-nusa-dua-by-ihg/hotel/bali-id.html" target="_blank" class="hotel-link" onclick="event.stopPropagation()">
+                                    Holiday Inn Resort <span class="hotel-link-type">飯店</span>
+                                </a>
+                                <a href="https://www.agoda.com/zh-tw/courtyard-bali-nusa-dua-resort_2/hotel/bali-id.html" target="_blank" class="hotel-link" onclick="event.stopPropagation()">
+                                    Courtyard by Marriott <span class="hotel-link-type">飯店</span>
+                                </a>
+                            </div>
+                            <p class="accommodation-price"><strong>$5,000 ~ $7,400</strong> /人 (2晚)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="result-section">
+            <div class="section-header">
+                <span class="section-tag">Your Journey</span>
+                <h2 class="section-title">行程邀請函</h2>
+                <p class="section-desc">您的專屬旅程已準備就緒</p>
+            </div>
+
+            <div class="ticket-wrapper">
+                <div class="boarding-pass" id="ticket">
+                    <div class="ticket-corner ticket-corner-tl"></div>
+                    <div class="ticket-corner ticket-corner-tr"></div>
+                    
+                    <div class="pass-header">
+                        <div class="pass-header-left">
+                            <div class="airline-icon">✈</div>
+                            <div class="airline-info">
+                                <span class="pass-logo">BALI 2026</span>
+                                <span class="pass-tagline">Luxury Escape</span>
+                            </div>
+                        </div>
+                        <div class="pass-route">
+                            <span class="route-code">TPE</span>
+                            <span class="route-arrow">→</span>
+                            <span class="route-code">DPS</span>
+                        </div>
+                    </div>
+
+                    <div class="pass-body">
+                        <div class="pass-section">
+                            <div class="pass-row">
+                                <div class="pass-field">
+                                    <label>Passenger Name</label>
+                                    <p id="ticket-name">GUEST</p>
+                                </div>
+                                <div class="pass-field">
+                                    <label>Travel Period</label>
+                                    <p>05 — 11 JUN 2026</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pass-perforation">
+                            <div class="perf-circle perf-left"></div>
+                            <div class="perf-line"></div>
+                            <div class="perf-circle perf-right"></div>
+                        </div>
+
+                        <div class="pass-section">
+                            <div class="pass-row">
+                                <div class="pass-field full">
+                                    <label>Experience Style</label>
+                                    <p id="ticket-style" class="style-tags">Group Tour · Local Eats · Relax Stay</p>
+                                </div>
+                            </div>
+
+                            <div class="pass-row">
+                                <div class="pass-field full">
+                                    <label>Selected Accommodations</label>
+                                    <p id="ticket-accommodations" class="accommodation-tags">請選擇住宿方案</p>
+                                </div>
+                            </div>
+
+                            <div class="pass-divider"></div>
+
+                            <div class="pass-row">
+                                <div class="pass-field full">
+                                    <label>Estimated Budget</label>
+                                    <p class="pass-budget">
+                                        <span class="currency">TWD</span>
+                                        <span id="ticket-budget">$ --</span>
+                                        <span class="per-person">/ person</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pass-footer">
+                        <div class="barcode-placeholder"></div>
+                        <p class="footer-text">Deep Blue & Jungle Sanctuary · Boarding Pass</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="download-section">
+                <button class="btn-download" onclick="downloadTicket()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    下載我的行程邀請函
+                </button>
+            </div>
+        </section>
+
+    </div>
+
+    <div id="budget-bar">
+        <span class="budget-icon">💰</span>
+        <div class="budget-info">
+            <span class="budget-label">Est. Total / Person</span>
+            <span class="budget-amount" id="float-total">$15,000 - $15,000</span>
+        </div>
+    </div>
+
+    <footer>
+        <p>Bali 2026 Trip Planner · Designed with care</p>
+    </footer>
+
+    <script>
+        let userName = "Traveler";
+        const BASE_VALUE = 15000;
+        const BASE_LUXURY = 22000;
+        
+        const UPGRADE_COSTS = {
+            ocean: 3500,
+            food: 2000,
+            spa: 1500
+        };
+
+        const EXPERIENCE_DESC = {
+            ocean: {
+                value: '參加精緻小團 Klook 套票，與其他旅客一同出海，熱鬧且高 CP 值。專業導遊帶領，裝備完整。',
+                luxury: '私人包船出海，專屬船長與行程安排，享受完全的隱私與自由，無須配合他人時間。'
+            },
+            food: {
+                value: '海鮮燒烤吃到飽、在地高評價餐廳隨意點餐不看價格。從街頭美食到 Fine Dining 都能盡情享受。',
+                luxury: '安排飯店私人浪漫晚餐，專屬沙灘燭光或池畔用餐，求婚級儀式感，專屬管家服務。'
+            },
+            spa: {
+                value: '稻田景觀名店，如 Karsa Spa、Cretya Ubud 等，環境優美價格合理，每天按也不心疼。',
+                luxury: '五星飯店內頂級 SPA，藥草桑拿、精油療程、貴婦級尊榮服務，完整的身心靈放鬆體驗。'
+            }
+        };
+
+        let experiences = { ocean: 'value', food: 'value', spa: 'value' };
+        let accommodations = { ubud: [0, 0], penida: [0, 0], nusadua: [0, 0] };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('section').forEach(section => {
+                if (section.id !== 'hero') {
+                    observer.observe(section);
+                }
+            });
+        });
+
+        function startJourney() {
+            const input = document.getElementById('username').value.trim();
+            if (input) userName = input;
+            
+            document.getElementById('ticket-name').innerText = userName.toUpperCase();
+            
+            document.getElementById('flight-section').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            setTimeout(() => {
+                document.getElementById('budget-bar').classList.add('show');
+            }, 800);
+            
+            calculateTotal();
+        }
+
+        function setExperience(type, level) {
+            experiences[type] = level;
+            
+            const card = document.getElementById(`card-${type}`);
+            const status = document.getElementById(`status-${type}`);
+            const desc = document.getElementById(`desc-${type}`);
+            const buttons = card.querySelectorAll('.toggle-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            buttons[level === 'value' ? 0 : 1].classList.add('active');
+            
+            if (level === 'luxury') {
+                card.classList.add('active');
+                status.innerText = '目前：頂級奢華';
+            } else {
+                card.classList.remove('active');
+                status.innerText = '目前：精緻奢華';
+            }
+            
+            desc.innerText = EXPERIENCE_DESC[type][level];
+            calculateTotal();
+        }
+
+        function selectAccommodation(event, region, level, min, max) {
+            const container = event.currentTarget.parentElement;
+            container.querySelectorAll('.accommodation-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            
+            event.currentTarget.classList.add('active');
+            accommodations[region] = [min, max];
+            
+            calculateTotal();
+            
+            if (region === 'nusadua') {
+                setTimeout(() => {
+                    document.getElementById('result-section').scrollIntoView({ behavior: 'smooth' });
+                }, 500);
+            }
+        }
+
+        function calculateTotal() {
+            let baseCost = BASE_VALUE;
+            let extraCost = 0;
+            
+            if (experiences.ocean === 'luxury') extraCost += UPGRADE_COSTS.ocean;
+            if (experiences.food === 'luxury') extraCost += UPGRADE_COSTS.food;
+            if (experiences.spa === 'luxury') extraCost += UPGRADE_COSTS.spa;
+            
+            let accMin = accommodations.ubud[0] + accommodations.penida[0] + accommodations.nusadua[0];
+            let accMax = accommodations.ubud[1] + accommodations.penida[1] + accommodations.nusadua[1];
+            
+            let totalMin = baseCost + extraCost + accMin;
+            let totalMax = baseCost + extraCost + accMax;
+            
+            const fmt = (num) => "$" + num.toLocaleString();
+            const rangeStr = accMin > 0 
+                ? `${fmt(totalMin)} — ${fmt(totalMax)}`
+                : `${fmt(baseCost + extraCost)} + 住宿`;
+            
+            document.getElementById('float-total').innerText = rangeStr;
+            document.getElementById('ticket-budget').innerText = rangeStr;
+            
+            let styles = [];
+            styles.push(experiences.ocean === 'luxury' ? 'Private Boat' : 'Group Tour');
+            styles.push(experiences.food === 'luxury' ? 'Fine Dining' : 'Local Eats');
+            
+            if (accommodations.nusadua[1] > 8000) {
+                styles.push('Luxury Resort');
+            } else if (accommodations.nusadua[1] > 0) {
+                styles.push('Comfort Stay');
+            } else {
+                styles.push('TBD');
+            }
+            
+            document.getElementById('ticket-style').innerText = styles.join(' · ');
+            
+            updateTicketAccommodations();
+        }
+
+        function updateTicketAccommodations() {
+            let selectedHotels = [];
+            
+            if (accommodations.ubud[1] > 0) {
+                const tier = accommodations.ubud[1] > 5000 ? 'Jungle Pool Villa' : 'Rice Field Villa';
+                selectedHotels.push('🌿 Ubud: ' + tier);
+            }
+            
+            if (accommodations.penida[1] > 0) {
+                const tier = accommodations.penida[1] > 5000 ? 'Beachfront Resort' : 'Ocean Dive Stay';
+                selectedHotels.push('🌊 Penida: ' + tier);
+            }
+            
+            if (accommodations.nusadua[1] > 0) {
+                const tier = accommodations.nusadua[1] > 8000 ? 'Royal Palace' : 'Beach Club';
+                selectedHotels.push('🥂 Nusa Dua: ' + tier);
+            }
+            
+            const displayText = selectedHotels.length > 0 
+                ? selectedHotels.join(' · ') 
+                : '請選擇住宿方案';
+            
+            document.getElementById('ticket-accommodations').innerText = displayText;
+        }
+
+        function downloadTicket() {
+            const element = document.getElementById('ticket');
+            
+            html2canvas(element, {
+                scale: 2,
+                backgroundColor: '#f5f5f5',
+                useCORS: true,
+                allowTaint: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Bali_2026_${userName}.png`;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            }).catch(err => {
+                console.error('Download failed:', err);
+                alert('下載失敗，請稍後再試');
+            });
+        }
+
+        document.getElementById('username').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') startJourney();
+        });
+    </script>
+
+</body>
+</html>
