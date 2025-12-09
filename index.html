@@ -351,6 +351,46 @@
             transform: translateY(-2px);
         }
 
+        /* Section 跳轉按鈕 */
+        .btn-next-section {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 60px;
+            padding: 12px 32px;
+            background: transparent;
+            border: 1px solid var(--gray-700);
+            color: var(--text-secondary);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-next-section:hover {
+            border-color: var(--gold-accent);
+            color: var(--gold-accent);
+            transform: translateX(4px);
+            opacity: 1;
+        }
+
+        .btn-next-section svg {
+            width: 14px;
+            height: 14px;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-next-section:hover svg {
+            transform: translateX(4px);
+        }
+
+        .section-navigation {
+            text-align: center;
+        }
+        
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -1151,6 +1191,116 @@
             transform: scale(1);
         }
 
+/* 機票選擇樣式 */
+        .flight-ticket-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .flight-ticket-card {
+            position: relative;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 48px 32px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-align: center;
+        }
+
+        .flight-ticket-card:hover {
+            background: var(--glass-hover);
+            border-color: var(--gray-700);
+        }
+
+        .flight-ticket-card.active {
+            border-color: var(--gold-accent);
+            background: linear-gradient(
+                135deg, 
+                rgba(233, 196, 106, 0.08) 0%, 
+                rgba(255, 107, 53, 0.05) 100%
+            );
+            box-shadow: 
+                0 0 20px rgba(233, 196, 106, 0.2),
+                0 0 40px rgba(233, 196, 106, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .flight-ticket-card.active:hover {
+            box-shadow: 
+                0 0 30px rgba(233, 196, 106, 0.3),
+                0 0 60px rgba(233, 196, 106, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .flight-ticket-selected {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 32px;
+            height: 32px;
+            background: var(--gold-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: var(--black-deep);
+            opacity: 0;
+            transform: scale(0);
+            transition: var(--transition-bounce);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(233, 196, 106, 0.6);
+        }
+
+        .flight-ticket-card.active .flight-ticket-selected {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .flight-ticket-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .flight-ticket-icon {
+            font-size: 3rem;
+            color: var(--gold-accent);
+            margin-bottom: 24px;
+        }
+
+        .flight-ticket-title {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .flight-ticket-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 24px;
+            min-height: 60px;
+        }
+
+        .flight-ticket-price {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            padding-top: 16px;
+            border-top: 1px solid var(--glass-border);
+            width: 100%;
+        }
+
+        .flight-ticket-price strong {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            display: block;
+            margin-top: 8px;
+        }
+        
         #budget-bar {
             position: fixed;
             bottom: 32px;
@@ -1585,6 +1735,15 @@
                 grid-template-columns: 1fr;
             }
 
+            .flight-ticket-options {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .flight-ticket-card {
+                padding: 32px 24px;
+            }
+
             .timeline-line {
                 left: 24px;
             }
@@ -1618,10 +1777,19 @@
             }
 
             /* 修正區域：手機版機票跑版修復 */
-            .boarding-pass {
-                border-radius: 12px;
+            .pass-budget {
+                font-size: 1.4rem !important;
+                flex-wrap: nowrap;
+                white-space: nowrap;
             }
-
+            
+            .currency {
+                font-size: 0.7rem !important;
+            }
+            
+            .per-person {
+                font-size: 0.65rem !important;
+            }
             .pass-header {
                 flex-direction: column;
                 gap: 20px;
@@ -1736,8 +1904,65 @@
                     查看 Skyscanner 即時票價
                 </a>
             </div>
+
+            <div class="section-navigation">
+                <button class="btn-next-section" onclick="scrollToSection('flight-ticket-section')">
+                    前往選擇機票
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </button>
+            </div>
+            
         </section>
 
+<section id="flight-ticket-section">
+            <div class="section-header">
+                <span class="section-tag">Required</span>
+                <h2 class="section-title">機票選擇</h2>
+                <p class="section-desc">選擇您的機票方案 · 必選項目</p>
+            </div>
+
+            <div class="flight-ticket-options">
+                <div class="flight-ticket-card" id="ticket-purchase" onclick="selectFlightTicket('purchase')">
+                    <div class="flight-ticket-selected">✓</div>
+                    <div class="flight-ticket-content">
+                        <div class="flight-ticket-icon">
+                            <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                            </svg>
+                        </div>
+                        <h4 class="flight-ticket-title">劃位 / 購買機票</h4>
+                        <p class="flight-ticket-desc">包含台北 ⇄ 峇里島來回機票，專人協助劃位與票務處理</p>
+                        <p class="flight-ticket-price"><strong>NT$ 15,000</strong> / 人</p>
+                    </div>
+                </div>
+
+                <div class="flight-ticket-card" id="ticket-self" onclick="selectFlightTicket('self')">
+                    <div class="flight-ticket-selected">✓</div>
+                    <div class="flight-ticket-content">
+                        <div class="flight-ticket-icon">
+                            <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                            </svg>
+                        </div>
+                        <h4 class="flight-ticket-title">自行處理機票</h4>
+                        <p class="flight-ticket-desc">已有機票或使用里程兌換，不需要額外購買</p>
+                        <p class="flight-ticket-price"><strong>NT$ 0</strong> / 人</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-navigation">
+                <button class="btn-next-section" onclick="scrollToSection('regions-section')">
+                    探索三大區域
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+        
         <section id="regions-section">
             <div class="section-header">
                 <span class="section-tag">Destinations</span>
@@ -1818,6 +2043,16 @@
                     </div>
                 </div>
             </div>
+            
+            <div class="section-navigation">
+                <button class="btn-next-section" onclick="scrollToSection('itinerary-section')">
+                    查看每日行程
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </button>
+            </div>
+            
         </section>
 
         <section id="itinerary-section">
@@ -1913,6 +2148,16 @@
                         <span class="timeline-highlight">返回台北</span>
                     </div>
                 </div>
+                
+            </div>
+            
+            <div class="section-navigation">
+                <button class="btn-next-section" onclick="scrollToSection('highlights-section')">
+                    探索行程亮點
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </button>
             </div>
         </section>
 
@@ -1971,6 +2216,15 @@
                         </p>
                     </div>
                 </div>
+            </div>
+            
+            <div class="section-navigation">
+                <button class="btn-next-section" onclick="scrollToSection('experience-section')">
+                    自訂體驗風格
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </button>
             </div>
         </section>
 
@@ -2037,6 +2291,14 @@
                     </div>
                     <div class="experience-price">升級差額：<strong>+$1,500</strong> /人</div>
                 </div>
+            </div>
+            <div class="section-navigation">
+                <button class="btn-next-section" onclick="scrollToSection('accommodation-section')">
+                    選擇住宿方案
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </button>
             </div>
         </section>
 
@@ -2226,6 +2488,15 @@
                     </div>
                 </div>
             </div>
+            
+            <div class="section-navigation">
+                <button class="btn-next-section" onclick="scrollToSection('result-section')">
+                    查看行程邀請函
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </button>
+            </div>
         </section>
 
         <section id="result-section">
@@ -2366,6 +2637,8 @@
 
         let experiences = { ocean: 'value', food: 'value', spa: 'value' };
         let accommodations = { ubud: [0, 0], penida: [0, 0], nusadua: [0, 0] };
+        let flightTicket = null; // 'purchase' 或 'self'
+        const FLIGHT_TICKET_COST = 15000;
 
         document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries) => {
@@ -2383,6 +2656,13 @@
             });
         });
 
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+        
         function startJourney() {
             const input = document.getElementById('username').value.trim();
             if (input) userName = input;
@@ -2390,8 +2670,8 @@
             document.getElementById('ticket-name').innerText = userName.toUpperCase();
             
             document.getElementById('flight-section').scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start'
+                behavior: 'smooth', 
+                block: 'start' 
             });
             
             setTimeout(() => {
@@ -2424,6 +2704,18 @@
             calculateTotal();
         }
 
+        function selectFlightTicket(type) {
+            flightTicket = type;
+            
+            document.querySelectorAll('.flight-ticket-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            
+            document.getElementById(`ticket-${type}`).classList.add('active');
+            
+            calculateTotal();
+        }
+        
         function selectAccommodation(event, region, level, min, max) {
             const container = event.currentTarget.parentElement;
             container.querySelectorAll('.accommodation-card').forEach(card => {
@@ -2446,6 +2738,12 @@
             let baseCost = BASE_VALUE;
             let extraCost = 0;
             
+            // 機票費用
+            if (flightTicket === 'purchase') {
+                extraCost += FLIGHT_TICKET_COST;
+            }
+            
+            // 體驗升級費用
             if (experiences.ocean === 'luxury') extraCost += UPGRADE_COSTS.ocean;
             if (experiences.food === 'luxury') extraCost += UPGRADE_COSTS.food;
             if (experiences.spa === 'luxury') extraCost += UPGRADE_COSTS.spa;
@@ -2464,16 +2762,17 @@
             document.getElementById('float-total').innerText = rangeStr;
             document.getElementById('ticket-budget').innerText = rangeStr;
             
+            // 更新體驗風格文字（中文翻譯）
             let styles = [];
-            styles.push(experiences.ocean === 'luxury' ? 'Private Boat' : 'Group Tour');
-            styles.push(experiences.food === 'luxury' ? 'Fine Dining' : 'Local Eats');
+            styles.push(experiences.ocean === 'luxury' ? '私人包船' : '精緻小團');
+            styles.push(experiences.food === 'luxury' ? '頂級私廚' : '在地美食');
             
             if (accommodations.nusadua[1] > 8000) {
-                styles.push('Luxury Resort');
+                styles.push('奢華度假村');
             } else if (accommodations.nusadua[1] > 0) {
-                styles.push('Comfort Stay');
+                styles.push('舒適住宿');
             } else {
-                styles.push('TBD');
+                styles.push('待選擇');
             }
             
             document.getElementById('ticket-style').innerText = styles.join(' · ');
@@ -2485,18 +2784,18 @@
             let selectedHotels = [];
             
             if (accommodations.ubud[1] > 0) {
-                const tier = accommodations.ubud[1] > 5000 ? 'Jungle Pool Villa' : 'Rice Field Villa';
-                selectedHotels.push('🌿 Ubud: ' + tier);
+                const tier = accommodations.ubud[1] > 5000 ? '叢林泳池飯店' : '輕奢度假別墅';
+                selectedHotels.push(tier);
             }
             
             if (accommodations.penida[1] > 0) {
-                const tier = accommodations.penida[1] > 5000 ? 'Beachfront Resort' : 'Ocean Dive Stay';
-                selectedHotels.push('🌊 Penida: ' + tier);
+                const tier = accommodations.penida[1] > 5000 ? '頂級海濱度假村' : '海景精品飯店';
+                selectedHotels.push(tier);
             }
             
             if (accommodations.nusadua[1] > 0) {
-                const tier = accommodations.nusadua[1] > 8000 ? 'Royal Palace' : 'Beach Club';
-                selectedHotels.push('🥂 Nusa Dua: ' + tier);
+                const tier = accommodations.nusadua[1] > 8000 ? '頂奢五星度假村' : '精品五星度假村';
+                selectedHotels.push(tier);
             }
             
             const displayText = selectedHotels.length > 0 
@@ -2505,30 +2804,42 @@
             
             document.getElementById('ticket-accommodations').innerText = displayText;
         }
-
+        
         function downloadTicket() {
+            // 驗證機票是否已選擇
+            if (!flightTicket) {
+                alert('請先選擇機票方案\n\n請回到「機票選擇」區域選擇您的機票方案後，再下載邀請函。');
+                document.getElementById('flight-ticket-section').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+                return;
+            }
+            
             const element = document.getElementById('ticket');
             
-            // 修正：調整下載參數以提升質感
+            // 使用修正後的參數進行下載
             html2canvas(element, {
-                scale: 3, // 提高解析度到 3 倍
-                backgroundColor: '#0a0a0a', // 使用深黑色背景，而非預設白/灰
+                scale: 3, // 提高解析度
+                backgroundColor: '#0a0a0a', 
                 useCORS: true,
                 allowTaint: true,
                 logging: false,
+                windowWidth: 1200,
                 onclone: (clonedDoc) => {
-                    // 可在此處對下載前的元素做額外樣式調整（例如增加邊距）
                     const clonedElement = clonedDoc.getElementById('ticket');
-                    clonedElement.style.margin = '20px'; 
+                    clonedElement.style.margin = '40px auto';
+                    clonedElement.style.maxWidth = '700px';
+                    clonedElement.style.boxShadow = '0 60px 120px rgba(0, 0, 0, 0.9), 0 0 100px rgba(233, 196, 106, 0.3)';
                 }
             }).then(canvas => {
                 const link = document.createElement('a');
-                link.download = `Bali_2026_${userName}.png`;
-                link.href = canvas.toDataURL('image/png', 1.0); // 最高品質
+                link.download = `Bali_2026_${userName}_Invitation.png`;
+                link.href = canvas.toDataURL('image/png', 1.0);
                 link.click();
             }).catch(err => {
                 console.error('Download failed:', err);
-                alert('下載失敗，請稍後再試');
+                alert('下載失敗，請稍後再試或使用截圖功能');
             });
         }
 
