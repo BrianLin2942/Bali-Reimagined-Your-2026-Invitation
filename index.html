@@ -1203,92 +1203,261 @@
             justify-content: center;
         }
 
-        /* 找到 @media (max-width: 768px) 區塊，新增/修改以下內容 */
-@media (max-width: 768px) {
-    /* ... 其他已有的樣式 ... */
+        .boarding-pass {
+            width: 100%;
+            max-width: 700px;
+            background: linear-gradient(
+                135deg,
+                rgba(20, 20, 20, 0.98) 0%,
+                rgba(26, 26, 26, 0.98) 100%
+            );
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(233, 196, 106, 0.2);
+            border-radius: 20px;
+            color: var(--text-primary);
+            overflow: hidden;
+            box-shadow: 
+                0 40px 80px rgba(0, 0, 0, 0.8),
+                0 0 60px rgba(233, 196, 106, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            transition: var(--transition-smooth);
+        }
 
-    .boarding-pass {
-        border-radius: 12px;
-        max-width: 95%; /* 新增：避免左右太窄 */
-    }
+        .boarding-pass:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                0 50px 100px rgba(0, 0, 0, 0.9),
+                0 0 80px rgba(233, 196, 106, 0.25);
+        }
 
-    .pass-header {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-        padding: 24px 20px; /* 調整左右padding */
-    }
+        .ticket-corner {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(233, 196, 106, 0.3);
+            z-index: 1;
+        }
 
-    .pass-header-left {
-        flex-direction: column;
-        gap: 12px;
-    }
+        .ticket-corner-tl {
+            top: 16px;
+            left: 16px;
+            border-right: none;
+            border-bottom: none;
+        }
 
-    .pass-logo {
-        font-size: 1.3rem; /* 縮小字體 */
-        letter-spacing: 3px;
-    }
+        .ticket-corner-tr {
+            top: 16px;
+            right: 16px;
+            border-left: none;
+            border-bottom: none;
+        }
 
-    .route-code {
-        font-size: 1.4rem; /* 縮小字體 */
-        letter-spacing: 2px;
-    }
+        .pass-header {
+            background: linear-gradient(
+                135deg,
+                rgba(233, 196, 106, 0.12) 0%,
+                rgba(255, 107, 53, 0.08) 100%
+            );
+            border-bottom: 1px solid rgba(233, 196, 106, 0.2);
+            padding: 28px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .pass-body {
-        padding: 20px; /* 減少內距 */
-    }
+        .pass-header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
 
-    .pass-row {
-        grid-template-columns: 1fr;
-        gap: 16px; /* 減少間距 */
-    }
+        .airline-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--gold-accent), var(--coral-accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 20px rgba(233, 196, 106, 0.3);
+            color: #000;
+        }
 
-    .pass-field label {
-        font-size: 0.6rem; /* 縮小標籤 */
-    }
+        .airline-info {
+            display: flex;
+            flex-direction: column;
+        }
 
-    .pass-field p {
-        font-size: 1rem; /* 縮小內容 */
-    }
-    
-    .pass-budget {
-        font-size: 1.5rem !important; /* 進一步縮小預算數字 */
-    }
+        .pass-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--gold-accent);
+            letter-spacing: 4px;
+            text-shadow: 0 2px 15px rgba(233, 196, 106, 0.4);
+        }
 
-    .currency,
-    .per-person {
-        font-size: 0.7rem; /* 縮小貨幣符號 */
-    }
+        .pass-tagline {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
 
-    .style-tags,
-    .accommodation-tags {
-        font-size: 0.85rem !important; /* 縮小標籤文字 */
-        line-height: 1.5;
-    }
-    
-    .ticket-corner {
-        width: 24px;
-        height: 24px;
-    }
+        .pass-route {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
-    .airline-icon {
-        width: 40px; /* 縮小圖標 */
-        height: 40px;
-    }
+        .route-code {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: 3px;
+        }
 
-    .pass-footer {
-        padding: 16px 20px; /* 調整footer間距 */
-    }
+        .route-arrow {
+            font-size: 1.2rem;
+            color: var(--gold-accent);
+        }
 
-    .barcode-placeholder {
-        width: 150px; /* 縮小條碼 */
-        height: 32px;
-    }
+        .pass-body {
+            padding: 36px 40px;
+        }
 
-    .footer-text {
-        font-size: 0.75rem; /* 縮小footer文字 */
-    }
-}
+        .pass-section {
+            margin-bottom: 24px;
+        }
+
+        .pass-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .pass-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 24px;
+        }
+
+        .pass-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .pass-field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pass-field.full {
+            grid-column: 1 / -1;
+        }
+
+        .pass-field label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(233, 196, 106, 0.6);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .pass-field p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .style-tags,
+        .accommodation-tags {
+            font-family: 'Outfit', sans-serif !important;
+            font-size: 0.95rem !important;
+            color: var(--text-secondary) !important;
+            font-weight: 400 !important;
+            line-height: 1.6;
+        }
+
+        .pass-budget {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            font-size: 2.2rem !important;
+            background: linear-gradient(135deg, var(--gold-accent), var(--coral-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .currency {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .per-person {
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+
+        .pass-perforation {
+            position: relative;
+            height: 24px;
+            margin: 32px -40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .perf-line {
+            flex: 1;
+            height: 1px;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 8px,
+                rgba(233, 196, 106, 0.3) 8px,
+                rgba(233, 196, 106, 0.3) 16px
+            );
+        }
+
+        .perf-circle {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: var(--black-deep);
+            border: 1px solid rgba(233, 196, 106, 0.3);
+            border-radius: 50%;
+        }
+
+        .perf-left {
+            left: -12px;
+        }
+
+        .perf-right {
+            right: -12px;
+        }
+
+        .pass-divider {
+            height: 1px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(233, 196, 106, 0.2) 20%,
+                rgba(233, 196, 106, 0.2) 80%,
+                transparent
+            );
+            margin: 28px 0;
+        }
+
+        .pass-footer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px 40px;
+            text-align: center;
+            border-top: 1px solid rgba(233, 196, 106, 0.1);
+        }
 
         .barcode-placeholder {
             width: 200px;
@@ -2338,31 +2507,29 @@
         }
 
         function downloadTicket() {
-    const element = document.getElementById('ticket');
-    
-    html2canvas(element, {
-        scale: 4, // 提升到 4 倍解析度
-        backgroundColor: '#0a0a0a',
-        useCORS: true,
-        allowTaint: true,
-        logging: false,
-        windowWidth: 1200, // 設定渲染寬度
-        onclone: (clonedDoc) => {
-            const clonedElement = clonedDoc.getElementById('ticket');
-            // 確保下載版本有足夠邊距和最佳寬度
-            clonedElement.style.margin = '40px auto';
-            clonedElement.style.maxWidth = '700px';
-            clonedElement.style.boxShadow = '0 60px 120px rgba(0, 0, 0, 0.9), 0 0 100px rgba(233, 196, 106, 0.3)';
-        }
-    }).then(canvas => {
-        const link = document.createElement('a');
-        link.download = `Bali_2026_${userName}_Invitation.png`;
-        link.href = canvas.toDataURL('image/png', 1.0);
-        link.click();
-    }).catch(err => {
-        console.error('Download failed:', err);
-        alert('下載失敗，請稍後再試或使用截圖功能');
-    });
+            const element = document.getElementById('ticket');
+            
+            // 修正：調整下載參數以提升質感
+            html2canvas(element, {
+                scale: 3, // 提高解析度到 3 倍
+                backgroundColor: '#0a0a0a', // 使用深黑色背景，而非預設白/灰
+                useCORS: true,
+                allowTaint: true,
+                logging: false,
+                onclone: (clonedDoc) => {
+                    // 可在此處對下載前的元素做額外樣式調整（例如增加邊距）
+                    const clonedElement = clonedDoc.getElementById('ticket');
+                    clonedElement.style.margin = '20px'; 
+                }
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Bali_2026_${userName}.png`;
+                link.href = canvas.toDataURL('image/png', 1.0); // 最高品質
+                link.click();
+            }).catch(err => {
+                console.error('Download failed:', err);
+                alert('下載失敗，請稍後再試');
+            });
         }
 
         document.getElementById('username').addEventListener('keypress', (e) => {
